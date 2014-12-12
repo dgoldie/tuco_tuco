@@ -166,4 +166,11 @@ defmodule TucoTuco.Finder do
   def find_all :xpath, xpath do
     WebDriver.Session.elements(TucoTuco.current_session, :xpath, xpath)
   end
+
+  @doc """
+    Return an array of all elements matching an xpath relative to a start element.
+  """
+  def find_within start_element, :xpath, xpath do
+    WebDriver.Session.elements(TucoTuco.current_session, :xpath, xpath, start_element)
+  end
 end
